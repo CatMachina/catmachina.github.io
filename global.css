@@ -1,0 +1,11 @@
+body {
+  margin: auto 0;
+}
+
+.page-content.selected {
+
+}
+
+.page-content.not-selected {
+  display: none;
+}
