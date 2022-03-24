@@ -1,16 +1,20 @@
+$(document).ready(function() {
+  let navbarButtons = $(".navbar");
+  let pageContentDivs = $(".page-content");
 
-let navbarButtons = document.getElementsByClassName("navbar");
-let pageContentDivs = document.getElementsByClassName("page-content");
+  navbarButtons.addEVentListener('click', function() {
+    pageContentDivs.forEach((pageContentDiv) => {
+      pageContentDiv.removeClass("selected");
+      pageContentDiv.addClass("not-selected");
+    });
 
-function handleNavbarButtonClick(pageName) {
-  Array.from(pageContentDivs).forEach((pageContentDiv) => {
-    pageContentDiv.classList.remove("selected");
-    pageContentDiv.classList.add("not-selected");
+    const pageName = button.firstChildElement.innerHTML;
+    const pageId = pageName.replace(" ", "_") + "-page";
+    let displayedPage = document.getElementById(pageId);
+    displayedPage.classList.add("selected");
   });
-  const pageId = pageName.replace(" ", "_") + "-page";
-  let displayedPage = document.getElementById(pageId);
-  displayedPage.classList.add("selected");
-}
+});
+
 
 Array.from(navbarButtons).forEach((button) => {
   const pageName = button.firstChildElement.innerHTML;
