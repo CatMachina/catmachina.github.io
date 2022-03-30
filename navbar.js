@@ -1,35 +1,21 @@
-$(document).ready(function() {
-  let navbarButtons = $(".navbar");
-  let pageContentDivs = $(".page-content");
+$(document).ready(function () {
+  let navbarButtons = $(".navbarButton");
+  let pageContentDivs = $(".pageContent");
 
-  navbarButtons.addEVentListener('click', function() {
-    pageContentDivs.forEach((pageContentDiv) => {
-      pageContentDiv.removeClass("selected");
-      pageContentDiv.addClass("not-selected");
+  navbarButtons.on("click", function () {
+    pageContentDivs.each(function () {
+      $(this).removeClass("selected");
+      $(this).addClass("not-selected");
     });
 
-    const pageName = button.firstChildElement.innerHTML;
-    const pageId = pageName.replace(" ", "_") + "-page";
-    let displayedPage = document.getElementById(pageId);
-    displayedPage.classList.add("selected");
+    const pageId = "#" + $(this).attr("id").replace("-button", "") + "-page";
+    let displayedPage = $(pageId);
+    displayedPage.addClass("selected");
+    displayedPage.removeClass("not-selected");
   });
+
+  // pageContentDivs.each(function() {
+  //   const fileName = $(this).attr("id").replace("-page", "") + ".html";
+  //   $(this).load(fileName);
+  // });
 });
-
-
-Array.from(navbarButtons).forEach((button) => {
-  const pageName = button.firstChildElement.innerHTML;
-  console.log(pageName);
-  button.addEVentListener("click", handleNavbarButtonClick(pageName));
-});
-
-Array.from(pageContentDivs).forEach(pageContentDiv => {
-    const fileName = pageContentDiv.id.replace("-page", "");
-    load(fileName + ".html", pageContentDiv);
-});
-
-function load(url, element)
-{
-    fetch(url).then(res => {
-        element.innerHTML = res; 
-    });
-}
