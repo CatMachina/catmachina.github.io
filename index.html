@@ -1,25 +1,43 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="navbar.js"></script>
     <title>CatMachina</title>
-    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="global.css" />
+    <link rel="stylesheet" href="header.css" />
   </head>
   <body>
     <header>
-        <div class="navbarWrapper">
-            <!-- Featured stuff and welcome-->
-            <button class="navbarButton">
-                Home
-            </button>
-            <button class="navbarButton">
-                About Me
-            </button>
-            <button class="navbarButton">
-                Timeline
-            </button>
-        </div>
+      <div class="navbarWrapper">
+        <img id="catmachina-logo" src="" alt="Create a logo for later" />
+        <!-- Featured stuff and welcome-->
+        <button id="home-button" class="navbarButton selected">
+          <p>Home</p>
+        </button>
+        <button id="about_me-button" class="navbarButton not-selected">
+          <p>About Me</p>
+        </button>
+        <button id="resume-button" class="navbarButton not-selected">
+          <p>Resumé</p>
+        </button>
+        <button id="timeline-button" class="navbarButton not-selected">
+          <p>Timeline</p>
+        </button>
+      </div>
     </header>
-    <h1>My First Heading</h1>
-    <p>My first paragraph.</p>
+    <div id="main-page">
+      <div id="home-page" class="pageContent selected"></div>
+      <div id="about_me-page" class="pageContent not-selected">
+        <h4>Hello there!</h4>
+
+        <p>
+          I am a Computer Science student from the University of Waterloo,
+          graduating class of 2025.
+        </p>
+      </div>
+      <div id="resumé-page" class="pageContent not-selected"></div>
+      <div id="timeline-page" class="pageContent not-selected"></div>
+    </div>
   </body>
 </html>
