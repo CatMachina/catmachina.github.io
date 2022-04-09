@@ -1,8 +1,21 @@
+// Mixins + Variables
+@darkGrey: #111016; 
+
 .typography {
   font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
   "Arial", sans-serif;
 }
 
+// Typography
+.titleMain {
+ .typography();
+}
+
+.subtitleMain {
+  .typography();
+}
+
+// Page Layout
 body {
   margin: auto 0;
 }
@@ -14,14 +27,7 @@ body {
   display: none;
 }
 
-.titleMain {
- .typography();
-}
-
-.subtitleMain {
-  .typography();
-}
-
+// Homepage
 .imageGallery {
   width: 100%;
   height: 150px;
@@ -45,13 +51,25 @@ body {
   }
 }
 
+.blackFeatureBlock {
+  width: 100%;
+  height: 480px;
+  background-color: @darkGrey;
+}
+
+.whiteFeatureBlock {
+  width: 100%;
+  height: 480px;
+}
+
+// Navbar
 .navbarWrapper {
   width: 100%;
   height: 65px;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  background-color: #111016;
+  background-color: @darkGrey;
   img#catmachina-logo {
     margin-right: auto;
   }
