@@ -1,5 +1,6 @@
 // Mixins + Variables
-@darkGrey: #111016; 
+@darkGrey: #111016;
+@white: white;
 
 .typography {
   font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
@@ -13,6 +14,21 @@
 
 .subtitleMain {
   .typography();
+}
+
+// Global styles
+.blackBackground {
+  background-color: @darkGrey;
+  button {
+    background-color: @white;
+  }
+}
+
+.whiteBackground {
+  background-color: @white;
+  button {
+    background-color: @darkGrey;
+  }
 }
 
 // Page Layout
@@ -59,15 +75,37 @@ body {
   margin-bottom: 0;
 }
 
-.blackFeatureBlock {
+.featureBlock {
   width: 100%;
   height: 480px;
-  background-color: @darkGrey;
-}
-
-.whiteFeatureBlock {
-  width: 100%;
-  height: 480px;
+  display: flex;
+  flex-direction: row;
+  div {
+    width: 50%;
+    height: 100%;
+  }
+  .featureBlockImageWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .featureBlockContentWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    h1 {
+      .typography();
+    }
+    p {
+      .typography();
+    }
+    button {
+      width: 75px;
+      height: 30px;
+    }
+  }
 }
 
 // Navbar
