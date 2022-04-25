@@ -1,23 +1,39 @@
+@font-face {
+  font-family: "mainFont";
+  src: url(assets/fonts/Raleway-VariableFont_wght.ttf);
+}
 .typography {
-  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: "mainFont", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
-.titleMain {
-  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+.titlePrimary {
+  font-size: 36px;
+  font-family: "mainFont", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  color: black;
 }
-.subtitleMain {
-  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+.titleSecondary {
+  font-size: 36px;
+  font-family: "mainFont", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  color: white;
 }
-.blackBackground {
-  background-color: #111016;
+.subtitlePrimary {
+  font-size: 18px;
+  font-family: "mainFont", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  color: black;
 }
-.blackBackground button {
-  background-color: white;
+.subtitleSecondary {
+  font-size: 18px;
+  font-family: "mainFont", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  color: white;
 }
-.whiteBackground {
-  background-color: white;
+.textPrimary {
+  font-size: 12px;
+  font-family: "mainFont", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  color: black;
 }
-.whiteBackground button {
-  background-color: #111016;
+.textSecondary {
+  font-size: 12px;
+  font-family: "mainFont", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  color: white;
 }
 body {
   margin: auto 0;
@@ -38,10 +54,10 @@ body {
   justify-content: flex-start;
   align-items: center;
 }
-#image-gallery-introduction .titleMain {
+#image-gallery-introduction .titlePrimary {
   margin: 50px 0 15px 0;
 }
-#image-gallery-introduction .subtitleMain {
+#image-gallery-introduction .subtitlePrimary {
   position: relative;
   left: 240px;
   margin: 0 0 18px 0;
@@ -73,15 +89,28 @@ body {
   justify-content: flex-start;
   align-items: center;
 }
-.featureBlock .featureBlockContentWrapper h1 {
-  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-}
-.featureBlock .featureBlockContentWrapper p {
-  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-}
 .featureBlock .featureBlockContentWrapper button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 75px;
   height: 30px;
+  border: none;
+}
+.featureBlock .featureBlockContentWrapper button:hover {
+  cursor: pointer;
+}
+.blackFeatureBackground {
+  background-color: #111016;
+}
+.blackFeatureBackground button {
+  background-color: white;
+}
+.whiteFeatureBackground {
+  background-color: white;
+}
+.whiteFeatureBackground button {
+  background-color: #111016;
 }
 .navbarWrapper {
   width: 100%;
@@ -100,14 +129,9 @@ body {
   background-color: transparent;
   border: none;
 }
-.navbarWrapper button p {
-  font-size: 18px;
-  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  color: white;
-}
 .navbarWrapper button:hover {
   cursor: pointer;
 }
-.navbarWrapper button:hover p {
+.navbarWrapper button:hover .subtitleSecondary {
   color: lightgrey;
 }

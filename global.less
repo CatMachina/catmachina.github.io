@@ -1,35 +1,54 @@
 // Mixins + Variables
+@black: black;
 @darkGrey: #111016;
 @white: white;
 
+@font-face {
+  font-family: "mainFont";
+  src: url(assets/fonts/Raleway-VariableFont_wght.ttf);
+}
+
 .typography {
-  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
-  "Arial", sans-serif;
+  font-family: "mainFont", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
 // Typography
-.titleMain {
- .typography();
+.titlePrimary {
+  font-size: 36px;
+  .typography();
+  color: @black;
+}
+.titleSecondary {
+  font-size: 36px;
+  .typography();
+  color: @white;
 }
 
-.subtitleMain {
+.subtitlePrimary {
+  font-size: 18px;
   .typography();
+  color: @black;
+}
+
+.subtitleSecondary {
+  font-size: 18px;
+  .typography();
+  color: @white;
+}
+
+.textPrimary {
+  font-size: 12px;
+  .typography();
+  color: @black;
+}
+
+.textSecondary {
+  font-size: 12px;
+  .typography();
+  color: @white;
 }
 
 // Global styles
-.blackBackground {
-  background-color: @darkGrey;
-  button {
-    background-color: @white;
-  }
-}
-
-.whiteBackground {
-  background-color: @white;
-  button {
-    background-color: @darkGrey;
-  }
-}
 
 // Page Layout
 body {
@@ -57,10 +76,10 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  .titleMain {
+  .titlePrimary {
     margin: 50px 0 15px 0;
   }
-  .subtitleMain {
+  .subtitlePrimary {
     position: relative;
     left: 240px;
     margin: 0 0 18px 0;
@@ -89,22 +108,37 @@ body {
     justify-content: center;
     align-items: center;
   }
-  
+
   .featureBlockContentWrapper {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    h1 {
-      .typography();
-    }
-    p {
-      .typography();
-    }
     button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: 75px;
       height: 30px;
+      border: none;
+      &:hover {
+        cursor: pointer;
+      }
     }
+  }
+}
+
+.blackFeatureBackground {
+  background-color: @darkGrey;
+  button {
+    background-color: @white;
+  }
+}
+
+.whiteFeatureBackground {
+  background-color: @white;
+  button {
+    background-color: @darkGrey;
   }
 }
 
@@ -124,16 +158,11 @@ body {
     height: 100%;
     background-color: transparent;
     border: none;
-    p {
-      font-size: 18px;
-      .typography();
-      color: white;
-    }
   }
   button:hover {
     cursor: pointer;
-    p {
-        color: lightgrey;
+    .subtitleSecondary {
+      color: lightgrey;
     }
   }
 }
