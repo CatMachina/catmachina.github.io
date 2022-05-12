@@ -169,7 +169,7 @@ body {
 .featureBlock .featureBlockContentWrapper {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   text-align: center;
   margin: auto;
@@ -194,7 +194,7 @@ body {
   font-size: 16px;
 }
 .featureBlock .featureBlockContentWrapper h1 {
-  margin-top: 20%;
+  margin-top: 0;
   font-size: 28px;
 }
 .blackFeatureBackground {
