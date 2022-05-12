@@ -4,47 +4,120 @@
 @white: white;
 
 @font-face {
-  font-family: "mainFont";
+  font-family: "titleFont";
+  src: url(assets/fonts/BungeeShade-Regular.ttf);
+}
+
+@font-face {
+  font-family: "subtitle1Font";
+  src: url(assets/fonts/BungeeOutline-Regular.ttf);
+}
+
+@font-face {
+  font-family: "subtitle2Font";
+  src: url(assets/fonts/BungeeHairline-Regular.ttf);
+}
+
+@font-face {
+  font-family: "textFont";
   src: url(assets/fonts/Raleway-VariableFont_wght.ttf);
 }
 
-.typography {
-  font-family: "mainFont", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+.typographyHeading {
+  font-family: "titleFont", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+.typographySubheading1 {
+  font-family: "subtitle1Font", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+.typographySubheading2 {
+  font-family: "subtitle2Font", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+.typographyBody {
+  font-family: "textFont", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+.typingAnimation {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  animation: type 4s step(60, end);  
+}
+.typingWithCursorAnimation {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 5px solid @white; /* The typwriter cursor */
+  white-space: normal; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+@keyframes type {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 70% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: @white; }
 }
 
 // Typography
 .titlePrimary {
   font-size: 36px;
-  .typography();
+  .typographyHeading();
   color: @black;
 }
 .titleSecondary {
   font-size: 36px;
-  .typography();
+  .typographyHeading();
   color: @white;
 }
 
-.subtitlePrimary {
+.subtitle1Primary {
   font-size: 18px;
-  .typography();
+  .typographySubheading1();
   color: @black;
 }
 
-.subtitleSecondary {
+.subtitle1Secondary {
   font-size: 18px;
-  .typography();
+  .typographySubheading1();
+  color: @white;
+}
+
+.subtitle2Primary {
+  font-size: 18px;
+  .typographySubheading2();
+  color: @black;
+}
+
+.subtitle2Secondary {
+  font-size: 18px;
+  .typographySubheading2();
   color: @white;
 }
 
 .textPrimary {
   font-size: 12px;
-  .typography();
+  .typographyBody();
   color: @black;
 }
 
 .textSecondary {
   font-size: 12px;
-  .typography();
+  .typographyBody();
   color: @white;
 }
 
@@ -53,9 +126,6 @@
 // Page Layout
 body {
   margin: auto 0;
-}
-
-.pageContent.selected {
 }
 
 .pageContent.not-selected {
@@ -67,7 +137,6 @@ body {
   width: 100%;
   height: 150px;
   margin: 12px auto;
-  background-color: aquamarine;
 }
 
 #image-gallery-introduction {
@@ -77,9 +146,9 @@ body {
   justify-content: flex-start;
   align-items: center;
   .titlePrimary {
-    margin: 50px 0 15px 0;
+    margin: 36px 0 0 0;
   }
-  .subtitlePrimary {
+  .subtitle2Primary {
     position: relative;
     left: 240px;
     margin: 0 0 18px 0;
@@ -90,7 +159,8 @@ body {
   margin-top: 0;
 }
 
-#homepage-image-gallery-3 {
+#homepage-image-gallery-2 {
+  
   margin-bottom: 0;
 }
 
@@ -107,6 +177,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    #learn-about-me-animation {
+      width: 70%;
+      font-size: 36px;
+    }
   }
 
   .featureBlockContentWrapper {
@@ -114,16 +188,30 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    text-align: center;
+    margin: auto;
+    .blockDescription {
+      width: 65%;
+      font-size: 14px;
+      margin: 0 0 24px 0;
+    }
     button {
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 75px;
-      height: 30px;
+      width: 120px;
+      height: 45px;
       border: none;
       &:hover {
         cursor: pointer;
       }
+      p {
+        font-size: 16px;
+      }
+    }
+    h1 {
+      margin-top: 20%;
+      font-size: 28px;
     }
   }
 }
@@ -158,11 +246,14 @@ body {
     height: 100%;
     background-color: transparent;
     border: none;
-  }
-  button:hover {
-    cursor: pointer;
-    .subtitleSecondary {
-      color: lightgrey;
+    &:hover {
+      cursor: pointer;
+      p {
+        color: lightgrey;
+      }
+    }
+    p {
+      font-size: 18px;
     }
   }
 }
