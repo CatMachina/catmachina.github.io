@@ -1,41 +1,243 @@
-.typography {
-  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
-  "Arial", sans-serif;
+// Mixins + Variables
+@black: black;
+@darkGrey: #111016;
+@white: white;
+
+@font-face {
+  font-family: "titleFont";
+  src: url(assets/fonts/BungeeShade-Regular.ttf);
 }
 
+@font-face {
+  font-family: "subtitle1Font";
+  src: url(assets/fonts/BungeeOutline-Regular.ttf);
+}
+
+@font-face {
+  font-family: "subtitle2Font";
+  src: url(assets/fonts/BungeeHairline-Regular.ttf);
+}
+
+@font-face {
+  font-family: "textFont";
+  src: url(assets/fonts/Raleway-VariableFont_wght.ttf);
+}
+
+.typographyHeading {
+  font-family: "titleFont", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+.typographySubheading1 {
+  font-family: "subtitle1Font", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+.typographySubheading2 {
+  font-family: "subtitle2Font", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+.typographyBody {
+  font-family: "textFont", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+.typingAnimation {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  animation: type 4s step(60, end);  
+}
+.typingWithCursorAnimation {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 5px solid @white; /* The typwriter cursor */
+  white-space: normal; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+@keyframes type {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 70% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: @white; }
+}
+
+// Typography
+.titlePrimary {
+  font-size: 36px;
+  .typographyHeading();
+  color: @black;
+}
+.titleSecondary {
+  font-size: 36px;
+  .typographyHeading();
+  color: @white;
+}
+
+.subtitle1Primary {
+  font-size: 18px;
+  .typographySubheading1();
+  color: @black;
+}
+
+.subtitle1Secondary {
+  font-size: 18px;
+  .typographySubheading1();
+  color: @white;
+}
+
+.subtitle2Primary {
+  font-size: 18px;
+  .typographySubheading2();
+  color: @black;
+}
+
+.subtitle2Secondary {
+  font-size: 18px;
+  .typographySubheading2();
+  color: @white;
+}
+
+.textPrimary {
+  font-size: 12px;
+  .typographyBody();
+  color: @black;
+}
+
+.textSecondary {
+  font-size: 12px;
+  .typographyBody();
+  color: @white;
+}
+
+// Global styles
+
+// Page Layout
 body {
   margin: auto 0;
-}
-
-.pageContent.selected {
 }
 
 .pageContent.not-selected {
   display: none;
 }
 
-.titleMain {
- .typography();
-}
-
-.subtitleMain {
-  .typography();
-}
-
+// Homepage
 .imageGallery {
   width: 100%;
-  height: 240px;
+  height: 150px;
   margin: 12px auto;
-  background-color: aquamarine;
 }
 
+#image-gallery-introduction {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  .titlePrimary {
+    margin: 36px 0 0 0;
+  }
+  .subtitle2Primary {
+    position: relative;
+    left: 240px;
+    margin: 0 0 18px 0;
+  }
+}
+
+#homepage-image-gallery-1 {
+  margin-top: 0;
+}
+
+#homepage-image-gallery-2 {
+  
+  margin-bottom: 0;
+}
+
+.featureBlock {
+  width: 100%;
+  height: 480px;
+  display: flex;
+  flex-direction: row;
+  div {
+    width: 50%;
+    height: 100%;
+  }
+  .featureBlockImageWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    #learn-about-me-animation {
+      width: 70%;
+      font-size: 36px;
+    }
+  }
+
+  .featureBlockContentWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    .blockDescription {
+      width: 65%;
+      font-size: 14px;
+      margin: 0 0 24px 0;
+    }
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 120px;
+      height: 45px;
+      border: none;
+      &:hover {
+        cursor: pointer;
+      }
+      p {
+        font-size: 16px;
+      }
+    }
+    h1 {
+      margin-top: 0;
+      font-size: 28px;
+    }
+  }
+}
+
+.blackFeatureBackground {
+  background-color: @darkGrey;
+  button {
+    background-color: @white;
+  }
+}
+
+.whiteFeatureBackground {
+  background-color: @white;
+  button {
+    background-color: @darkGrey;
+  }
+}
+
+// Navbar
 .navbarWrapper {
   width: 100%;
   height: 65px;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  background-color: #111016;
+  background-color: @darkGrey;
   img#catmachina-logo {
     margin-right: auto;
   }
@@ -44,16 +246,14 @@ body {
     height: 100%;
     background-color: transparent;
     border: none;
+    &:hover {
+      cursor: pointer;
+      p {
+        color: lightgrey;
+      }
+    }
     p {
       font-size: 18px;
-      .typography();
-      color: white;
-    }
-  }
-  button:hover {
-    cursor: pointer;
-    p {
-        color: lightgrey;
     }
   }
 }
