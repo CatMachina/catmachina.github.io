@@ -248,15 +248,16 @@ body {
   position: relative;
   border: #111016 solid 2px;
 }
+#about_me-display-image-container .aboutMeHoverImageHolder :hover {
+  cursor: pointer;
+}
 #about_me-display-image-container .aboutMeHoverImageHolder .triangleTint {
   position: absolute;
   top: 0;
   left: 0;
   width: 0;
   height: 0;
-}
-#about_me-display-image-container .aboutMeHoverImageHolder .triangleTint :hover {
-  cursor: pointer;
+  pointer-events: none;
 }
 #about_me-display-image-container .aboutMeHoverImageHolder .triangleTint.Blue {
   border-top: 50px solid rgba(0, 127, 255, 0.8);

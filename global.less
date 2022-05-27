@@ -283,15 +283,16 @@ body {
     margin: 10px;
     position: relative;
     border: @darkGrey solid 2px;
+    :hover {
+      cursor: pointer;
+    }
     .triangleTint {
       position: absolute;
       top: 0;
       left: 0;
       width: 0;
       height: 0;
-      :hover {
-        cursor: pointer;
-      }
+      pointer-events: none;
     }
     .triangleTint.Blue {
       border-top: 50px solid rgba(0, 127, 255, 0.8);
