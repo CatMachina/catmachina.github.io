@@ -3,12 +3,14 @@
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="image-gallery.js"></script>
-    <script src="navbar.js"></script>
-    <title>CatMachina</title>
+    <title>CatMachina - About Me</title>
     <link rel="stylesheet" href="global.css" />
   </head>
   <body>
-    <div id="about_me-page" class="pageContent not-selected">
+    <header>
+      <div id="navbar-location"></div>
+    </header>
+    <div id="about_me-page" class="pageContent">
       <div id="about_me-introduction">
         <h1 id="about_me-title" class="subtitle2Primary">This Is Me</h1>
       </div>
@@ -76,4 +78,9 @@
       </div>
     </div>
   </body>
+  <script>
+    $.get("navbar.html", function (data) {
+      $("#navbar-location").html(data);
+    });
+  </script>
 </html>
