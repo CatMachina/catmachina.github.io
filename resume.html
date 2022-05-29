@@ -1,14 +1,14 @@
-<!DOCTYPE html>
 <html>
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="image-gallery.js"></script>
-    <script src="navbar.js"></script>
-    <title>CatMachina</title>
+    <title>CatMachina - Resumé</title>
     <link rel="stylesheet" href="global.css" />
   </head>
   <body>
-    <div id="resume-page" class="pageContent not-selected">
+    <header>
+      <div id="navbar-location"></div>
+    </header>
+    <div id="resume-page" class="pageContent">
       <div id="resume-download-container">
         <h1 class="subtitle2Primary">My Resumé</h1>
         <div id="resume-download-buttons">
@@ -26,4 +26,9 @@
       </div>
     </div>
   </body>
+  <script>
+    $.get("navbar.html", function (data) {
+      $("#navbar-location").html(data);
+    });
+  </script>
 </html>
