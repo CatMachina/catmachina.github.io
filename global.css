@@ -340,7 +340,7 @@ a {
   background-color: #111016;
   margin: 30px;
 }
-#resume-download-container #resume-download-buttons button :hover {
+#resume-download-container #resume-download-buttons button:hover {
   cursor: pointer;
 }
 #resume-download-container #resume-download-buttons button p {
