@@ -38,7 +38,7 @@ const plugLinks: {
     },
   },
   {
-    to: "",
+    to: "./Resume_External.pdf",
     label: "resumé",
     className: "PlugsLast",
   },
