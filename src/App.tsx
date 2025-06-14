@@ -33,7 +33,7 @@ const plugLinks: {
     to: "",
     label: "phone",
     onClick: () => {
-      copyToClipboard("647-774-1738");
+      copyToClipboard("+1 647-774-1738");
       return true;
     },
   },
@@ -109,7 +109,7 @@ function App() {
             <img
               className="ProfilePicture"
               src="./Profile.png"
-              alt='Supposed to be my "logo", just picture a cyborg cat :3'
+              alt="A photo of me."
             />
             <div className="Plugs">
               {plugLinks.map((linkData) => (
@@ -133,28 +133,24 @@ function App() {
           <div className="AboutMeContent">
             <h1 className="AboutMeTitle">About Me</h1>
             <p className="AboutMeText">
-              Hello! I am an undergraduate student studying computer science at
-              the University of Waterloo. I am an experience fullstack developer
-              who is also dabbling in other areas of computer science! I've
-              worked in many companies that focused on collaborative work and
-              also startups that required independent work.
+              Hello! I am recent computer science graduate from the University
+              of Waterloo. I started as a Fullstack developer, but have recently
+              transitioned into infrastructure and systems work. I have
+              internship experience from many startups and prominently from X
+              (formerly known as twitter).
             </p>
             <p className="AboutMeText">
-              I am an expert in frontend frameworks and their languages (i.e.
-              HTML, CSS, JS/TS, React, Vue). I have an intermediate
-              understanding Object-Oriented programming with C++. Additionally,
-              I have intermediate proficiency in backend development using
-              technologies such as PostgresQL, python, and Ruby on Rails.
-              Finally, I have intermediate experience in database managements
-              and SQL.
+              I specialize in backend and systems development, with a strong
+              foundation in data structures, algorithms, and distributed
+              systems. I'm proficient in C++, Python, and Bash, and experienced
+              with infrastructure tools like Docker, Kubernetes, and Puppet.
+              My background spans compiler internals, type systems, and
+              intermediate representations, as well as practical knowledge of
+              PostgreSQL, SQL, and distributed computing frameworks such as
+              Spark and Hadoop. I'm comfortable working in both cloud-native and
+              large-scale in-house production environments.
             </p>
-            <p>
-              I am looking to experience every field of computer
-              science/software development! I specifically have an interest in
-              Machine Learning, Data Engineering/Distributed Computing, Video
-              Game Development, and Computer Vision. I am taking courses about them but I would love the opportunity to work in them!
-            </p>
-            <p>Please enjoy my portfolio!</p>
+            <p>Please enjoy my portfolio.</p>
           </div>
         </div>
         <Projects />
