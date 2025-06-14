@@ -9,10 +9,10 @@ const featuredProjects: ProjectCardData[] = [
     subtitle: "Subject: Compilers, Systems",
     text: [
       "A compiler for a subset of Java 1.3.",
-      "Written in C++ and done as a group project in school. Fairly comprehensive of the Java language."
+      "Written in C++ and done as a group project in school. Fairly comprehensive of the Java language.",
     ],
     classNames: [],
-    to: "https://github.com/CatMachina/Canny-Edge-Detector",
+    to: "https://github.com/CatMachina/Java-Subset-Joos-Compiler",
   },
   {
     imgSrc: "./Projects/Canny Edge Detector.png",
